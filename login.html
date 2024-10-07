@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <!-- basic -->
+   <meta charset="utf-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <!-- mobile metas -->
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+   <!-- site metas -->
+   <title>EcoStar_QR || Login</title>
+   <meta name="keywords" content="">
+   <meta name="description" content="">
+   <meta name="author" content="">
+   <!-- site icon -->
+   <link rel="icon" href="images/fevicon.png" type="image/png" />
+   <!-- bootstrap css -->
+   <link rel="stylesheet" href="css/bootstrap.min.css" />
+   <!-- site css -->
+   <link rel="stylesheet" href="style.css" />
+   <!-- responsive css -->
+   <link rel="stylesheet" href="css/responsive.css" />
+   <!-- color css -->
+   <link rel="stylesheet" href="css/colors.css" />
+   <!-- select bootstrap -->
+   <link rel="stylesheet" href="css/bootstrap-select.css" />
+   <!-- scrollbar css -->
+   <link rel="stylesheet" href="css/perfect-scrollbar.css" />
+   <!-- custom css -->
+   <link rel="stylesheet" href="css/custom.css" />
+   <!-- calendar file css -->
+   <link rel="stylesheet" href="js/semantic.min.css" />
+   <style>
+      body {
+         background: #f4f4f4; /* لون خلفية خفيف */
+      }
+
+       .form-section {
+          display: none;
+       }
+      .form-section.active {
+         display: block;
+      }
+
+
+      .login_section {
+         background: #fff; /* خلفية بيضاء للنموذج */
+         padding: 40px;
+         border-radius: 10px;
+         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      .field {
+         margin-bottom: 20px;
+      }
+      .label_field {
+         font-weight: bold;
+         color: #333;
+      }
+      input[type="email"],
+      input[type="password"] {
+         border-radius: 5px;
+         border: 1px solid #ccc;
+         padding: 10px;
+         width: 100%;
+         transition: border-color 0.3s;
+      }
+      input[type="email"]:focus,
+      input[type="password"]:focus {
+         border-color: #007bff; /* لون التركيز */
+         outline: none;
+      }
+      .main_bt {
+         background: #007bff; /* لون الزر */
+         color: white;
+         border: none;
+         border-radius: 5px;
+         padding: 10px 20px;
+         cursor: pointer;
+      }
+      .main_bt:hover {
+         background: #0056b3; /* لون الزر عند التمرير */
+      }
+      .br-logo{
+         background-color: blue;
+         border-radius: 25px;
+      }
+   </style>
+</head>
+<body class="inner_page login">
+<div class="full_container">
+   <div class="container">
+      <div class="center verticle_center full_height">
+         <div class="login_section">
+            <div class="logo_login text-center mb-4">
+               <img width="210" src="images/logo/logo.png" class="br-logo" alt="EcoStar Logo" />
+            </div>
+            <div id="signup-form" class="form-section">
+               <h2>إنشاء حساب جديد</h2>
+               <form>
+                  <fieldset>
+                     <div class="field">
+                        <label class="label_field">Email Address</label>
+                        <input type="email" name="email" placeholder="E-mail" id="signup-email"/>
+                     </div>
+                     <div class="field">
+                        <label class="label_field">Password</label>
+                        <input type="password" name="password" placeholder="Password" id="signup-password"/>
+                     </div>
+                     <div class="field margin_0">
+                        <button type="submit" class="main_bt">Register</button>
+                     </div>
+                  </fieldset>
+               </form>
+               <button class="btn btn-link toggle-btn">لديك حساب؟ تسجيل الدخول</button>
+            </div>
+            <div id="login-form" class="form-section active">
+               <h2>تسجيل الدخول</h2>
+               <form>
+                  <fieldset>
+                     <div class="field">
+                        <label class="label_field">Email Address</label>
+                        <input type="email" name="email" placeholder="E-mail" id="login-email"/>
+                     </div>
+                     <div class="field">
+                        <label class="label_field">Password</label>
+                        <input type="password" name="password" placeholder="Password" id="login-password"/>
+                     </div>
+                     <div class="field margin_0">
+                        <button type="submit" class="main_bt">Sing In</button>
+                     </div>
+                  </fieldset>
+               </form>
+               <button class="btn btn-link toggle-btn">لا أملك حساب؟ تسجيل جديد</button>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+<!-- jQuery -->
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<!-- wow animation -->
+<script src="js/animate.js"></script>
+
+<!-- custom js -->
+<script type="module" src="login.js"></script>
+</body>
+</html>

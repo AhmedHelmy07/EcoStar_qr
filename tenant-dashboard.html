@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>EcoStar || User Dashboard</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
+
+</head>
+<body class="dashboard dashboard_1">
+<div class="full_container">
+  <div class="inner_container">
+    <nav id="sidebar">
+      <!-- Sidebar content similar to the previous design -->
+      <div class="sidebar_blog_1">
+        <div class="sidebar-header">
+          <div class="logo_section">
+            <a href="index.html"><img class="logo_icon img-responsive" src="images/logo/logo_icon.png" alt="#" /></a>
+          </div>
+        </div>
+        <div class="sidebar_user_info">
+          <div class="user_info">
+            <h6 id="user-label">...</h6>
+            <button class="btn btn-danger" id="logout-btn">تسجيل الخروج</button>
+          </div>
+        </div>
+      </div>
+      <div class="sidebar_blog_2">
+        <h4>القائمة</h4>
+        <ul class="list-unstyled components">
+          <li><a  id="viewTenantsBtn"><i class="fa fa-users"></i> عرض المستأجرين</a></li>
+          <li><a  id="addTenantBtn"><i class="fa fa-plus"></i> إضافة مستأجر</a></li>
+          <li><a  id="accountSettingsBtn"><i class="fa fa-cog"></i> إعدادات الحساب</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div id="content">
+      <div class="topbar">
+        <nav class="navbar navbar-expand-lg navbar-light">
+          <div class="full">
+            <button type="button" id="sidebarCollapse" class="sidebar_toggle"><i class="fa fa-bars"></i></button>
+          </div>
+        </nav>
+      </div>
+
+      <div class="midde_cont">
+        <div class="container-fluid">
+          <div class="row column_title">
+            <div class="col-md-12">
+              <div class="page_title">
+                <h2>مدة التعاقد المتبقية: <span id="remainingContract"></span></h2>
+                <div id="contentArea">
+                  <!-- سيتم تحديث المحتوى هنا -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal for Adding Tenant -->
+<div class="modal fade" id="addTenantModal" tabindex="-1" role="dialog" aria-labelledby="addTenantModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="addTenantModalLabel">إضافة مستأجر جديد</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form id="addTenantForm">
+          <div class="form-group">
+            <label for="tenantEmail">البريد الإلكتروني</label>
+            <input type="email" class="form-control" id="tenantEmail" required>
+          </div>
+          <div class="form-group">
+            <label for="tenantPassword">كلمة المرور</label>
+            <input type="password" class="form-control" id="tenantPassword" required>
+          </div>
+          <input type="hidden" id="unitCode" value="123"> <!-- يمكنك تغيير هذا إلى منطق أكثر تعقيدًا -->
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">إغلاق</button>
+        <button type="button" class="btn btn-primary" id="saveTenantBtn">إضافة مستأجر</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal for Account Settings -->
+<div class="modal fade" id="accountSettingsModal" tabindex="-1" role="dialog" aria-labelledby="accountSettingsModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="accountSettingsModalLabel">إعدادات الحساب</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form id="accountSettingsForm">
+          <div class="form-group">
+            <label for="newName">اسم جديد</label>
+            <input type="text" class="form-control" id="newName">
+          </div>
+          <div class="form-group">
+            <label for="newEmail">البريد الإلكتروني الجديد</label>
+            <input type="email" class="form-control" id="newEmail">
+          </div>
+          <div class="form-group">
+            <label for="newPassword">كلمة المرور الجديدة</label>
+            <input type="password" class="form-control" id="newPassword">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">إغلاق</button>
+        <button type="button" class="btn btn-primary" id="saveAccountSettingsBtn">حفظ التغييرات</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
+
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script type="module" src="user-dashboard.js"></script>
